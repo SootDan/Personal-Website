@@ -1,0 +1,21 @@
+html {
+    background-color: black;
+    color: white;
+}
+
+
+/**
+ * Navbar
+*/
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    background-color: slateblue;
+}
+
+nav ul li {
+    width:100%;
+}
