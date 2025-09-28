@@ -1,6 +1,7 @@
-html {
-    background-color: black;
-    color: white;
+:root {
+    background-color: blueviolet;
+    color: yellow;
+    font-family: monospace;
 }
 
 
@@ -13,9 +14,23 @@ nav ul {
     padding: 0;
     overflow: hidden;
     display: flex;
-    background-color: slateblue;
+    background-color: purple;
+    box-shadow: 0.1em 0.1em black;
 }
 
 nav ul li {
-    width:100%;
+    float: left;
+}
+
+nav ul li :hover {
+    background-color: black;
+}
+
+nav ul li a {
+    display: block;
+    padding: 14px 16px;
+}
+
+a:visited {
+    color: white;
 }
