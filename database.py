@@ -27,6 +27,7 @@ def sql_fetchall(query: str, parameters: tuple = None) -> list[dict]:
     """
     with connect(f"dbname={DATABASE} user={USER}") as connection:
         with connection.cursor() as cursor:
+            # TODO: Rewrite this to be more pleasing to the eye
             cursor.execute(query, parameters)
             records = cursor.fetchall()
             arr: list = []

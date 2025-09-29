@@ -8,15 +8,14 @@
         <th>Required Time</th>
         <th>Current Time</th>
         <th>Deadline</th>
+        <th>Days Until</th>
+        <th>Hours / Day</th>
     </tr>
     {% for module in db %}
         <tr class="studytime_row">
-            <td>{{ module["id"] }}</td>
-            <td>{{ module["name"] }}</td>
-            <td>{{ module["required_hours"] }}</td>
-            <td>{{ module["studied_hours"] }}</td>
-            <td>{{ module["deadline"] }}</td>
-            
+            {% for key, value in module.items() %}
+                <td>{{ value }}</td>
+            {% endfor %}
         </tr>
     {% endfor %}
     <!--<form action="/studytime" method="post">
