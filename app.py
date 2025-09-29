@@ -28,6 +28,7 @@ def studytime():
     """
     TODO: Add docstring
     """
+    print(db.get_modules())
     if request.method == "GET":
         return render_template("studytime.html", db=db.get_modules())
 

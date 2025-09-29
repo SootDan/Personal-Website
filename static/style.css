@@ -16,6 +16,7 @@ nav ul {
     display: flex;
     background-color: purple;
     box-shadow: 0.1em 0.1em black;
+    
 }
 
 nav ul li {
@@ -28,9 +29,31 @@ nav ul li :hover {
 
 nav ul li a {
     display: block;
-    padding: 14px 16px;
+    padding: 1em 3em;
 }
 
 a:visited {
     color: white;
+}
+
+
+/* 
+ * StudyTime tables 
+*/
+table {
+    width: 100%;
+    table-layout: fixed;
+    text-align: left;
+    
+
+}
+
+tr.studytime_header {
+    height: 4em;
+    background-color: rgb(104, 5, 104);
+    font-size: large;
+}
+
+tr.studytime_row {
+    height: 2em;
 }

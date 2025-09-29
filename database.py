@@ -21,14 +21,21 @@ def sql_execute(query: str, parameters: tuple = None):
             cursor.execute(query, parameters)
 
 
-def sql_fetchall(query: str, parameters: tuple = None):
+def sql_fetchall(query: str, parameters: tuple = None) -> list[dict]:
     """
-    Fetches all instances of a select query.
+    Fetches all instances of a select query in the form of a list of dictionaries.
     """
     with connect(f"dbname={DATABASE} user={USER}") as connection:
         with connection.cursor() as cursor:
             cursor.execute(query, parameters)
-            return cursor.fetchall()
+            records = cursor.fetchall()
+            arr: list = []
+            for record in records:
+                module: dict = {}
+                for x, y in enumerate(cursor.description):
+                    module[y.name] = record[x]
+                arr.append(module)
+            return arr
 
 
 def create_studytime():

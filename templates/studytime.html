@@ -2,7 +2,7 @@
 
 {% block body %}
 <table>
-    <tr>
+    <tr class="studytime_header">
         <th>ID</th>
         <th>Module</th>
         <th>Required Time</th>
@@ -10,12 +10,13 @@
         <th>Deadline</th>
     </tr>
     {% for module in db %}
-        <tr>
-            <td>{{ module[0] }}</td>
-            <td>{{ module[1] }}</td>
-            <td>{{ module[2] }}</td>
-            <td>{{ module[3] }}</td>
-            <td>{{ module[4] }}</td>
+        <tr class="studytime_row">
+            <td>{{ module["id"] }}</td>
+            <td>{{ module["name"] }}</td>
+            <td>{{ module["required_hours"] }}</td>
+            <td>{{ module["studied_hours"] }}</td>
+            <td>{{ module["deadline"] }}</td>
+            
         </tr>
     {% endfor %}
     <!--<form action="/studytime" method="post">
